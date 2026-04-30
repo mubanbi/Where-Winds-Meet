@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/MainWindow"/>
+    <qresource prefix="/new/prefix1">
+        <file>Image_1777387822081_947.png</file>
+        <file>zhulinjiuju.png</file>
+        <file>shaodongjia.png</file>
+        <file>red_line.jpg</file>
+        <file>vortex_grey.png</file>
+        <file>buxianxian.png</file>
+    </qresource>
+</RCC>

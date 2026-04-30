@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindowClass</class>
+ <widget class="QMainWindow" name="MainWindowClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>731</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QPushButton" name="btnStart">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>120</y>
+      <width>91</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* 正常状态：完全透明 */
+QPushButton {
+    background-color: transparent; /* 背景透明 */
+    border: none;                  /* 无边框 */
+}
+
+/* 鼠标悬停状态：给文字加一层淡淡的“高亮”感 */
+QPushButton:hover {
+    /* 重点：这里用半透明白色，能产生一种“字变亮了”的视觉错觉 */
+    background-color: rgba(255, 255, 255, 30); 
+    border: 1px solid rgba(255, 215, 0, 50); /* 淡淡的金边 */
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btnQuit">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>150</y>
+      <width>81</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">/* 正常状态：完全透明 */
+QPushButton {
+    background-color: transparent; /* 背景透明 */
+    border: none;                  /* 无边框 */
+}
+
+/* 鼠标悬停状态：给文字加一层淡淡的“高亮”感 */
+QPushButton:hover {
+    /* 重点：这里用半透明白色，能产生一种“字变亮了”的视觉错觉 */
+    background-color: rgba(255, 255, 255, 30); 
+    border: 1px solid rgba(255, 215, 0, 50); /* 淡淡的金边 */
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="bgLabel">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>-5</y>
+      <width>581</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>../../Image_1777387822081_947.png</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <zorder>bgLabel</zorder>
+   <zorder>btnStart</zorder>
+   <zorder>btnQuit</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>731</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="MainWindow.qrc"/>
+ </resources>
+ <connections/>
+</ui>
