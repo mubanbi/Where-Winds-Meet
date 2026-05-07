@@ -364,7 +364,28 @@ void MainWindow::updateCamera()
 }
 // 1. 记录按键按下
 void MainWindow::keyPressEvent(QKeyEvent* event) {
-	// 记录按键按下状态
+	// --- 新增：ESC 退出确认逻辑 ---
+	if (event->key() == Qt::Key_Escape) {
+		QMessageBox msgBox(this);
+		msgBox.setWindowTitle("离开江湖");
+		msgBox.setText("确定要退出游戏，离开这段江湖旅程吗？");
+		// 设置对话框风格
+		msgBox.setWindowFlags(Qt::Dialog | Qt::CustomizeWindowHint | Qt::WindowTitleHint);
+
+		QPushButton* yesBtn = msgBox.addButton("退出", QMessageBox::YesRole);
+		QPushButton* noBtn = msgBox.addButton("留下", QMessageBox::NoRole);
+		msgBox.setDefaultButton(noBtn);
+
+		msgBox.exec();
+
+		if (msgBox.clickedButton() == yesBtn) {
+			this->close();
+		}
+		this->setFocus(); // 确保弹窗关闭后，焦点回到主窗口以便继续移动
+		return;
+	}
+
+	// 记录其他按键按下状态 (W/A/S/D 等)
 	pressedKeys.insert(event->key());
 
 	// 统一处理 E 键交互
@@ -453,7 +474,6 @@ void MainWindow::keyPressEvent(QKeyEvent* event) {
 		}
 	}
 }
-
 // 2. 记录按键松开
 void MainWindow::keyReleaseEvent(QKeyEvent* event) {
 	pressedKeys.remove(event->key());
