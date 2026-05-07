@@ -63,7 +63,7 @@ void Hero::moveBy(int dx, int dy) {
     if (hpBar) {
         // 水平居中算法：主角X + (主角宽 - 血条宽) / 2
         // 这里：this->x() + (120 - 80) / 2 = this->x() + 20
-        int targetX = this->x() -3 ;
+        int targetX = this->x() -4 ;
 
         // 垂直高度：主角Y - 想要留出的空隙
         // 如果想紧贴头顶就 -10，想高一点就 -20

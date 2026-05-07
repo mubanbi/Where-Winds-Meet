@@ -10,6 +10,7 @@
 #include "Hero.h"
 #include "NpcRed.h"
 #include "GameMap.h"
+#include "Item.h"
 
 class MainWindow : public QMainWindow
 {
@@ -24,6 +25,10 @@ protected:
     void mousePressEvent(QMouseEvent* event) override;
     void keyPressEvent(QKeyEvent* event) override;
     void keyReleaseEvent(QKeyEvent* event) override;
+
+protected:
+    // 声明事件过滤器，用来处理点击喽啰
+    bool eventFilter(QObject* watched, QEvent* event) override;
 
 private slots:
     void on_btnStart_clicked();
@@ -55,4 +60,38 @@ private:
 
     int sceneStage = 0;
 
+    Item* pickItem = nullptr;      // 道具指针，记得初始化为 nullptr
+    bool isNearItem = false;       // 是否靠近道具的标记
+
+    QLabel* healthLabel = nullptr; // 血量数字显示
+    int currentHealth = 100;      // 假设初始血量是100
+    int maxHealth = 100;
+
+    QList<QLabel*> minions;
+
+private:
+    int killCount = 0;        // 杀敌计数器
+    QLabel* boss = nullptr;   // BOSS 指针
+    void spawnBoss();
+
+    // --- 新增 Boss 相关变量 ---
+    int bossHealth = 1000;          // 总血量
+    int currentBossHealth = 1000;   // 当前血量
+    QProgressBar* bossHealthBar = nullptr; // 血条控件
+
+    void updatePlayerUI();
+    
+    QProgressBar* playerHpBar = nullptr;
+
+    void handlePlayerDeath();
+
+    QTimer* spawnTimer = nullptr;
+
+    QTimer* bossSkillTimer = nullptr;
+    void triggerBossSkill(); // 触发技能的函数
+
+    void showFinalEnding();
+
+    bool isRedJoined = false; // 记录红线是否加入队伍
+    bool isPerfectClear = true; // 是否保持无伤
 };

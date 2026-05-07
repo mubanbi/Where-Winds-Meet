@@ -49,6 +49,9 @@
     <ClCompile Include="GameMap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Item.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="Hero.h">
@@ -58,6 +61,9 @@
       <Filter>Header Files</Filter>
     </QtMoc>
     <QtMoc Include="GameMap.h">
+      <Filter>Header Files</Filter>
+    </QtMoc>
+    <QtMoc Include="Item.h">
       <Filter>Header Files</Filter>
     </QtMoc>
   </ItemGroup>
