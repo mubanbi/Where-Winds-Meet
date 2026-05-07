@@ -684,7 +684,7 @@ void MainWindow::spawnBoss()
 	// 2. 关键：先初始化数值，再让逻辑运行
 	// 确保这两个变量已经在 MainWindow.h 中声明为 int
 	this->bossHealth = 1000;
-	this->currentBossHealth = 10;
+	this->currentBossHealth = 1000;
 
 	// 3. 创建 Boss 实体
 	boss = new QLabel(currentMap);
@@ -897,8 +897,8 @@ void MainWindow::showFinalEnding()
 
 	// 2. 结局文本判定 (双结局逻辑)
 	QString endingText = this->isRedJoined ?
-		"千夜带着绣金楼的人离开了，\n\n但是不羡仙已经被烧毁，寒姨与红线皆不知所踪..." :
-		"千夜带着绣金楼的人离开了，\n\n但是不羡仙已经被烧毁，寒姨也不知所踪...";
+		"千夜带着绣金楼的人离开了，\n\n但是不羡仙已经被烧毁，寒姨与红线皆不知所踪...就此，你踏上了寻找她们的道路。" :
+		"千夜带着绣金楼的人离开了，\n\n但是不羡仙已经被烧毁，寒姨也不知所踪...就此，你踏上了寻找寒姨的道路。";
 
 	// 3. 显示主剧情文字 (代码保持不变)
 	QLabel* finalLabel = new QLabel(finalScreen);
